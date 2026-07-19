@@ -23,7 +23,7 @@
  *
  */
 module.exports = function(grunt) {
-    require('time-grunt')(grunt);
+    try { require('time-grunt')(grunt); } catch (e) { /* optional task-timing reporter */ }
 
     var _ = require('lodash'),
         defaultConfig,
@@ -145,7 +145,7 @@ module.exports = function(grunt) {
     addons = addons.filter(element => grunt.file.isDir(element));
 
     // Theme support — load theme.less directly from theme/ folder (no copy to source tree)
-    const defaultTheme = 'euro-office';
+    const defaultTheme = 'personal-office';
     const theme = process.env.THEME || defaultTheme;
     grunt.log.writeln('theme: ' + theme.green);
     const themeEntry = path.join('..', 'theme', theme, 'assets', 'less', 'theme.less');
