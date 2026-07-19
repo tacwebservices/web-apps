@@ -36,5 +36,5 @@ FROM web-base AS web-apps
         python3 merge_and_check.py
 
     RUN cd app/build && \
-        BUILD_ROOT=${BUILD_ROOT} PRODUCT_VERSION=${PRODUCT_VERSION} THEME=euro-office \
+        BUILD_ROOT=${BUILD_ROOT} PRODUCT_VERSION=${PRODUCT_VERSION} THEME=personal-office \
         node scripts/build-pipeline.js
